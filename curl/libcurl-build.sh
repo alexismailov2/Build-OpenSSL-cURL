@@ -165,7 +165,7 @@ if ! (type "pkg-config" > /dev/null 2>&1 ) ; then
 		echo "  Building pkg-config"
 		tar xfz pkg-config-0.29.2.tar.gz
 		pushd pkg-config-0.29.2 > /dev/null
-		./configure --prefix=/tmp/pkg_config --with-internal-glib >> "/tmp/${NGHTTP2_VERSION}.log" 2>&1
+		./configure --prefix=/tmp/pkg_config --with-internal-glib --enable-threaded-resolver >> "/tmp/${NGHTTP2_VERSION}.log" 2>&1
 		make -j${CORES} >> "/tmp/${NGHTTP2_VERSION}.log" 2>&1
 		make install >> "/tmp/${NGHTTP2_VERSION}.log" 2>&1
 		popd > /dev/null
